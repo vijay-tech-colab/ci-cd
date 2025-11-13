@@ -10,7 +10,13 @@ app.get("/", (req, res) => {
 
 // Example new API
 app.get("/api/data", (req, res) => {
-  res.json([{ id: 1, name: "Vijay" }]);
+  const data = [
+    { id: 1, name: "Vijay", role: "Developer" },
+    { id: 2, name: "Amit", role: "Designer" },
+    { id: 3, name: "Sneha", role: "Manager" },
+  ];
+
+  res.json(data);
 });
 
 app.listen(PORT, () => {
