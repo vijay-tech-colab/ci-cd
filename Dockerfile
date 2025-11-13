@@ -1,20 +1,20 @@
-# Step 1: Use official Node image
+# Use Node.js alpine image
 FROM node:18-alpine
 
-# Step 2: Create app directory
+# Create app directory
 WORKDIR /app
 
-# Step 3: Copy package files
+# Copy package.json
 COPY package*.json ./
 
-# Step 4: Install dependencies
+# Install dependencies
 RUN npm install --production
 
-# Step 5: Copy all files
+# Copy all source files
 COPY . .
 
-# Step 6: Expose port 3000
+# Expose port
 EXPOSE 3000
 
-# Step 7: Start app
-CMD ["npm", "start"]
+# Start server
+CMD ["node", "src/index.js"]
